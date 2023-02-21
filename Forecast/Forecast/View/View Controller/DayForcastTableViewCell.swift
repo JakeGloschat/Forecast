@@ -8,13 +8,16 @@
 import UIKit
 
 class DayForcastTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var dayNameLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var forcastedHighLabel: UILabel!
     
-    func updateViews() {
+    func updateViews(day: Day) {
+        dayNameLabel.text = day.validDate
+        forcastedHighLabel.text = String(day.highTemp)
+        iconImageView.image = UIImage(named: day.iconString)
         
     }
-
+    
 } // End of class
